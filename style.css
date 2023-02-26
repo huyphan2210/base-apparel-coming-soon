@@ -1,4 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans');
+
+:root {
+    --primary-desaturatedRed: hsl(0, 36%, 70%);
+    --primary-softRed: hsl(0, 93%, 68%);
+
+    --neutral-darkGrayishRed: hsl(0, 6%, 24%);
+
+    --gradient-nearWhite: hsl(0, 100%, 98%);
+    --gradient-nearPink: hsl(0, 80%, 86%);
+    --gradient-pink: hsl(0, 74%, 74%);
+}
+
+body {
+    min-height: 100vh;
+    margin: 0 auto;
+    background-image: url(./images/bg-pattern-desktop.svg);
+}
+
+main {
+    display: flex;
+    position: relative;
+}   
+    #logo {
+        position: absolute;
+        left: 12rem;
+        top: 4rem
+    }
+    #logoMobile {
+        display: none;
+    }
+    #heroImg {
+        width: 100%;
+        max-height: 100%;
+        background-image: url(./images/hero-desktop.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .comingSoon {
+        font-family: 'Josefin Sans', sans-serif;
+        padding: 12rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+        .comingSoon h1 {
+            font-size: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 2rem;
+            margin-block-end: 1rem;
+            color: var(--neutral-darkGrayishRed);
+        }
+
+            .comingSoon h1 span {
+                color: var(--primary-desaturatedRed);
+                font-weight: 200;
+            }
+
+        .comingSoon p {
+            color: var(--primary-desaturatedRed);
+            line-height: 1.5rem;
+            margin-block-end: 2rem;
+        }
+
+        form {
+            position: relative;
+            width: 100%;
+        }
+            form input {
+                width: calc(100% - 10.2rem);
+                padding: 1rem 8rem 1rem 2rem;
+                border-radius: 3rem;
+                font-family: 'Josefin Sans', sans-serif;
+                font-size: 1rem;
+                border-width: thin;
+                border-color: var(--primary-desaturatedRed);
+            }
+                form input::placeholder {
+                    color: var(--primary-desaturatedRed);
+                }
+                form input:focus {
+                    outline-color: var(--primary-softRed);
+                }
+            #error {
+                position: absolute;
+                visibility: hidden;
+                right: 6.5rem;
+                transform: translate(0, 50%);
+            }
+            form button {
+                position: absolute;
+                border-radius: 3rem;
+                height: 3.1rem;
+                width: 6rem;
+                right: 0;
+                border-width: 0;
+                background-image: linear-gradient(135deg, var(--gradient-nearPink), var(--gradient-pink));
+                box-shadow: 0.5rem 0.5rem 1rem var(--gradient-nearPink);
+            }
+                form button:hover {
+                    cursor: pointer;
+                    transform: scale(1.1);
+                }
+
+            .comingSoon form p {
+                display: none;
+                padding-left: 2rem;
+                color: var(--primary-softRed);
+            }
 
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+footer {
+    position: fixed;
+    left: 4rem;
+    bottom: 1vh;
+}
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+@media screen and (max-aspect-ratio: 1 / 1) {
+    main {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+        #logo {
+            display: none;
+        }
+        #logoMobile {
+            display: block;
+            width: 30%;
+            padding: 2rem;
+        }
+        #heroImg {
+            width: 100%;
+            aspect-ratio: 1.5;
+            background-image: url(./images/hero-mobile.jpg);
+        }
+        .comingSoon {
+            padding: 2rem;
+        }
+            .comingSoon h1{
+                font-size: 2rem;
+                line-height: 2.5rem;
+                letter-spacing: 1rem;
+            }
+
+            .comingSoon form p {
+                padding-left: 0;
+            }
+
+    footer {
+        position: static;
+    }
+}
