@@ -11,19 +11,37 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-
-  We're coming soon
-
-  Hello fellow shoppers! We're currently building our new fashion store. 
-  Add your email below to stay up-to-date with announcements and our launch deals.
-
-  Email Address
-  
+  <main>
+    <div class="comingSoon">
+      <img id="logo" src="./images/logo.svg" alt="Logo">
+      <h1>
+        <span>We're</span>
+        <br>
+        coming soon
+      </h1>
+      <p>
+        Hello fellow shoppers! We're currently building our new fashion store. 
+        Add your email below to stay up-to-date with announcements and our launch deals.
+      </p>
+      <form>
+        <input type="email" placeholder="Email Address">
+        <img id="error" src="./images/icon-error.svg" alt="Error Email">
+        <button type="submit">
+          <img src="./images/icon-arrow.svg" alt="Arrow Icon">
+        </button>
+        <p>Please provide a valid email</p>
+      </form>
+    </div>
+    <div id="heroImg"></div>
+    <img id="logoMobile" src="./images/logo.svg" alt="Logo">
+  </main>
   <footer>
     <p class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
       Coded by <a href="https://github.com/huyphan2210" target="_blank">Huy Phan</a>.
     </p>
   </footer>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="./function.js"></script>
 </body>
 </html>
